@@ -98,6 +98,15 @@ p { margin-bottom: 1rem; color: var(--text-secondary); }
   font-weight: 800;
   letter-spacing: 2px;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
 }
 
 .brand span {
@@ -381,5 +390,8 @@ p { margin-bottom: 1rem; color: var(--text-secondary); }
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+  .brand-logo {
+    height: 80px;
   }
 }
