@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORIE Mobility, Energy & Engineering — Fabrication Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/ORIE-01.png" alt="ORIE Holdings">
+      <span>ORIE Infrastructure & Energy — Shop</span>
+    </a>
+    <button class="cart-btn" id="cart-toggle">
+      Cart
+      <span class="cart-badge" id="cart-badge">0</span>
+    </button>
+  </nav>
+
+  <!-- Hero Strip -->
+  <section class="hero">
+    <h1>Order. Fabricate. Build.</h1>
+    <p>Browse preset fabrication packages or submit a custom order. We serve individuals, students, and organisations across Nigeria.</p>
+    <div class="hero-badges">
+      <span class="badge-pill highlight">Free consultation on custom orders</span>
+      <span class="badge-pill metal">Metal fabrication</span>
+      <span class="badge-pill solar">Solar & energy systems</span>
+      <span class="badge-pill engineering">Engineering design</span>
+    </div>
+  </section>
+
+  <!-- Two Column Layout -->
+  <main class="shop-container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="filter-group">
+        <h3>Categories</h3>
+        <div class="filter-item active" data-filter-type="cat" data-val="all">
+          <div class="filter-dot"></div> All products
+        </div>
+        <div class="filter-item" data-filter-type="cat" data-val="metal">
+          <div class="filter-dot dot-metal"></div> Metal fabrication
+        </div>
+        <div class="filter-item" data-filter-type="cat" data-val="solar">
+          <div class="filter-dot dot-solar"></div> Solar & energy
+        </div>
+        <div class="filter-item" data-filter-type="cat" data-val="eng">
+          <div class="filter-dot dot-eng"></div> Engineering design
+        </div>
+      </div>
+      
+      <div class="filter-group">
+        <h3>Customer Type</h3>
+        <div class="filter-item active" data-filter-type="cust" data-val="all">
+          <div class="filter-dot"></div> All
+        </div>
+        <div class="filter-item" data-filter-type="cust" data-val="student">
+          <div class="filter-dot dot-student"></div> Student
+        </div>
+        <div class="filter-item" data-filter-type="cust" data-val="org">
+          <div class="filter-dot dot-org"></div> Organisation
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Main Area -->
+    <div class="main-content">
+      
+      <!-- Cart Panel -->
+      <div class="cart-panel" id="cart-panel">
+        <h3 style="margin-bottom: 1rem;">Your Quote Estimate</h3>
+        <div id="cart-items">
+          <!-- JS injected -->
+        </div>
+        <div class="cart-total">
+          <span>Running Estimate:</span>
+          <span id="cart-total-amt">₦0</span>
+        </div>
+        <button class="btn btn-primary" id="checkout-btn" style="width: 100%;">Request Quote & Place Order</button>
+      </div>
+
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2>Preset packages</h2>
+        <span style="color: var(--text-secondary);" id="product-count">Showing 16 products</span>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="product-grid">
+        <!-- JS injected -->
+      </div>
+
+      <!-- Custom Order Banner -->
+      <div class="custom-banner">
+        <div class="custom-icon">🛠️</div>
+        <div>
+          <h2 style="color: white;">Need something custom?</h2>
+          <p style="color: var(--color-custom);">Don't see what you need? Submit a custom fabrication or engineering design request. Tell us what you want built — our team will review and send you a personalised quote within 48 hours.</p>
+          <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-primary" id="open-custom">Submit custom order</button>
+            <button class="btn btn-outline" style="color: var(--color-custom); border-color: var(--color-custom);">What can you make?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div style="text-align: center; padding: 4rem 2rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.9rem;">
+    ORIE Mobility, Energy & Engineering is a wholly owned subsidiary of ORIE Nigeria Holdings Limited. All fabrication orders are subject to site assessment and final quote confirmation.
+  </div>
+
+  <!-- Modals -->
+  <!-- Custom Order Modal -->
+  <div class="modal-overlay" id="custom-modal">
+    <div class="modal-card">
+      <h2>Custom fabrication / design request</h2>
+      <p>Describe your project. We will review and send a quote within 48 hours.</p>
+      
+      <div class="success-msg" id="custom-success">
+        Custom order received! We will review your project and contact you within 48 hours with a detailed quote.
+      </div>
+      
+      <form id="custom-form" style="margin-top: 1.5rem;">
+        <div class="form-group">
+          <label>Full name</label>
+          <input type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Phone number</label>
+          <input type="tel" class="form-control" placeholder="+234..." required>
+        </div>
+        <div class="form-group">
+          <label>Customer type</label>
+          <select class="form-control" required>
+            <option value="individual">Individual</option>
+            <option value="student">Student</option>
+            <option value="org">Organisation or Business</option>
+            <option value="gov">Government agency</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select class="form-control" required>
+            <option value="metal">Metal fabrication</option>
+            <option value="solar">Solar or energy system</option>
+            <option value="eng">Engineering design</option>
+            <option value="multi">Multiple or combined</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Project description</label>
+          <textarea class="form-control" rows="4" placeholder="Describe what you want fabricated or designed. Include dimensions, quantity, materials, and any specifications if known..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Estimated budget in ₦ (optional)</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Desired delivery date (optional)</label>
+          <input type="date" class="form-control">
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline close-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Checkout Quote Modal -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-card">
+      <h2>Request Quote</h2>
+      <p>Enter your details to request a final quote for your selected items.</p>
+      
+      <div class="success-msg" id="checkout-success">
+        Order request submitted! Our team will contact you within 24 hours with a full quote and timeline.
+      </div>
+      
+      <form id="checkout-form" style="margin-top: 1.5rem;">
+        <div class="form-group">
+          <label>Full name</label>
+          <input type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Phone number</label>
+          <input type="tel" class="form-control" placeholder="+234..." required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline close-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Order Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="shop.js"></script>
+</body>
+</html>
