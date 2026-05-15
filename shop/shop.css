@@ -70,7 +70,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
   align-items: center;
   gap: 1rem;
 }
-.nav-brand img { height: 160px; object-fit: contain; }
+.nav-brand img { height: 90px; object-fit: contain; }
 @media(max-width: 768px) {
   .nav-brand span { display: none; }
 }
@@ -102,11 +102,13 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   border-radius: 50%;
-  width: 40px;
+  width: auto;
+  padding: 0 15px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   cursor: pointer;
   font-size: 1.2rem;
   transition: var(--transition);
@@ -125,7 +127,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
 
 /* Hero Section */
 .hero {
-  padding: 8rem 2rem 4rem;
+  padding: 12rem 2rem 4rem;
   background: linear-gradient(to bottom, rgba(201, 168, 76, 0.05), transparent);
   border-bottom: 1px solid var(--border-color);
   text-align: center;
@@ -492,7 +494,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
   color: var(--accent-gold);
 }
 .brand-logo {
-  height: 160px;
+  height: 120px;
   width: auto;
   object-fit: contain;
 }

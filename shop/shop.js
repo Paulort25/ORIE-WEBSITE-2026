@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (savedTheme === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
-    themeToggleBtn.textContent = '🌙';
+    themeToggleBtn.textContent = '🌙 Theme';
   }
 
   themeToggleBtn.addEventListener('click', () => {
@@ -270,11 +270,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentTheme === 'light') {
       document.documentElement.removeAttribute('data-theme');
       localStorage.setItem('orie-shop-theme', 'dark');
-      themeToggleBtn.textContent = '☀️';
+      themeToggleBtn.textContent = '☀️ Theme';
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
       localStorage.setItem('orie-shop-theme', 'light');
-      themeToggleBtn.textContent = '🌙';
+      themeToggleBtn.textContent = '🌙 Theme';
     }
   });
 
