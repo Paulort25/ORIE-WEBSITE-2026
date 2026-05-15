@@ -256,6 +256,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   });
 
+  // Theme Toggle Logic
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('orie-shop-theme') || 'dark';
+  
+  if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeToggleBtn.textContent = '🌙';
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'light') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('orie-shop-theme', 'dark');
+      themeToggleBtn.textContent = '☀️';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('orie-shop-theme', 'light');
+      themeToggleBtn.textContent = '🌙';
+    }
+  });
+
   // Init
   renderProducts();
   updateCartUI();
