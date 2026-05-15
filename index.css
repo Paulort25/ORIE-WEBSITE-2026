@@ -377,7 +377,7 @@ p { margin-bottom: 1rem; color: var(--text-secondary); }
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* simple mobile menu hidden for now */
+    display: none;
   }
   .mobile-menu-btn {
     display: block;

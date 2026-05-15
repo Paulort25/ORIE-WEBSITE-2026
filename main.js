@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Simple mobile menu toggle (alert for now, could expand to full menu)
+  // Mobile menu toggle
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   mobileMenuBtn.addEventListener('click', () => {
     // Basic fallback for mobile viewing
