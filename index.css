@@ -345,7 +345,8 @@ p { margin-bottom: 1rem; color: var(--text-secondary); }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 3rem;
   align-items: center;
 }
 
