@@ -15,6 +15,13 @@
   --color-org: #2EC4B6;
   --color-success: #2A9D8F;
   --border-color: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(10, 10, 8, 0.95);
+  --footer-bg: rgba(0, 0, 0, 0.2);
+  --form-bg: rgba(255, 255, 255, 0.05);
+  --form-focus: rgba(255, 255, 255, 0.08);
+  --modal-bg: rgba(0, 0, 0, 0.8);
+  --metal-grad-1: #1f1f1f;
+  --metal-grad-2: #2d2d2d;
   --font-main: 'Outfit', sans-serif;
   --transition: all 0.3s ease;
 }
@@ -26,6 +33,13 @@
   --text-primary: #1A1A18;
   --text-secondary: #5A5A5A;
   --border-color: rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --footer-bg: rgba(0, 0, 0, 0.03);
+  --form-bg: rgba(0, 0, 0, 0.03);
+  --form-focus: rgba(0, 0, 0, 0.06);
+  --modal-bg: rgba(255, 255, 255, 0.8);
+  --metal-grad-1: #e0e0e0;
+  --metal-grad-2: #f5f5f5;
 }
 
 * {
@@ -51,7 +65,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(10, 10, 8, 0.95);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
@@ -312,7 +326,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
   font-size: 4rem;
   position: relative;
 }
-.img-metal { background: linear-gradient(135deg, #1f1f1f, #2d2d2d); }
+.img-metal { background: linear-gradient(135deg, var(--metal-grad-1), var(--metal-grad-2)); }
 .img-solar { background: linear-gradient(135deg, rgba(229, 169, 58, 0.1), rgba(229, 169, 58, 0.2)); }
 .img-eng { background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), rgba(58, 134, 255, 0.2)); }
 
@@ -390,7 +404,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: var(--modal-bg);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 1000;
@@ -432,7 +446,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
 }
 .form-control {
   width: 100%;
-  background: rgba(255,255,255,0.05);
+  background: var(--form-bg);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   padding: 0.75rem 1rem;
@@ -443,7 +457,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
 .form-control:focus {
   outline: none;
   border-color: var(--accent-gold);
-  background: rgba(255,255,255,0.08);
+  background: var(--form-focus);
 }
 .modal-footer {
   display: flex;
@@ -463,10 +477,10 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
 
 /* Footer Styles imported from index.css to maintain consistency */
 .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
   padding: 2rem 0;
   margin-top: 4rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--footer-bg);
 }
 
 .footer-content {
