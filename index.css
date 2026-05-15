@@ -152,7 +152,7 @@ p { margin-bottom: 1rem; color: var(--text-secondary); }
 .page-section {
   display: none;
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 180px;
   padding-bottom: 60px;
   opacity: 0;
   transform: translateY(20px);
@@ -171,6 +171,11 @@ p { margin-bottom: 1rem; color: var(--text-secondary); }
 }
 
 /* Sections */
+.sub-hero {
+  padding: 12rem 0 4rem;
+  text-align: center;
+}
+
 .section-content {
   padding: 4rem 0;
 }
@@ -376,6 +381,8 @@ p { margin-bottom: 1rem; color: var(--text-secondary); }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .page-section { padding-top: 120px; }
+  .sub-hero { padding: 8rem 0 4rem; }
   .nav-links {
     display: none;
   }
